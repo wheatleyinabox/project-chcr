@@ -71,6 +71,7 @@ img {
   --text-faint: #565f8988;
 }
 
+/* Gives disabled buttons a different bg color */
 .checkbox-container {
   -webkit-app-region: no-drag;
   cursor: var(--cursor);
@@ -87,10 +88,12 @@ img {
   outline: 0 solid var(--switch-background-color);
 }
 
+/* Stops status bar from overflowing */
 .status-bar {
   max-width: min-content;
 }
 
+/* Hides existing default text */
 .empty-state-action {
   display: none;
 }
@@ -98,10 +101,12 @@ img {
   font-size: 0;
 }
 
+/* Adds some padding to dropdown trees */
 .tree-item-self .tree-item-icon {
   padding-left: 10px;
 }
 
+/* Custom text for a blank tab page */
 .empty-state-title::before {
   content: "Project CHCR\A. . .\A[CLASSIFIED]";
   font-family: 'Courier New', Courier, monospace;
@@ -151,24 +156,20 @@ img {
   line-height: 1;
 }
 
+/* Adds box shadows to different headers & internal links styling */
 .cm-header, .inline-title, .border-right {
     text-shadow: 0 0 20px var(--interactive-accent);
 }
-
 .cm-hmd-internal-link {
     text-shadow: 0 0 8px var(--interactive-accent);
     opacity: 60%;
     color: var(--interactive-accent);
 }
-
 .view-header-breadcrumb {
     color: var(--interactive-accent);
     opacity: 60%;
 }
-
 .nav-file-tag{
     color: var(--interactive-accent);
     opacity: 50%;
 }
-
-
