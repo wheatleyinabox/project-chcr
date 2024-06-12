@@ -1,0 +1,174 @@
+body {
+  /* Backgrounds */
+  --background-primary: var(--color-base-00);
+  --background-primary-alt: var(--color-base-20);
+  --background-secondary: var(--color-base-00);
+  --background-modifier-border: var(--interactive-accent);
+  --background-modifier-border-hover: var(--interactive-accent);
+  --background-modifier-border-focus: var(--interactive-accent);
+  --interactive-hover: var(--color-base-00);
+  --radius-s: 0;
+  --radius-m: 0;
+  --radius-l: 0;
+  --nav-item-padding: 3px;
+
+  /* Normalize title bar colors */
+  --tab-container-background: var(--color-base-00);
+  --titlebar-background: var(--color-base-00);
+  --titlebar-background-focused: var(--color-base-00);
+
+  /* Graph adjustements */
+  --graph-line: var(--color-base-40, var(--background-modifier-border-focus));
+
+  /* Font sizes */
+  --header-size: 1.25em;
+  --h1-size: 1.802em;
+  --h2-size: 1.602em;
+  --h3-size: 1.424em;
+  --h4-size: 1.266em;
+  --h5-size: 1.125em;
+  --h6-size: 1em;
+
+  /* UI font sizes */
+  --font-ui-smaller: 13px;
+  --font-ui-small: 14px;
+  --font-ui-medium: 16px;
+  --font-ui-large: 22px;
+
+  /* UI font colors */
+  --h1-color: var(--interactive-accent);
+  --h2-color: #ffa92f;
+  --h3-color: #f9b453;
+  --h4-color: #ffc472;
+  --h5-color: #ffd08d;
+  --h6-color: #ffdfb3;
+
+  /* Internel Links */
+  --link-color: #ffd08d;
+}
+
+/* Centers all images! */
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* External Links */
+.external-link {
+  color: #8dc8ff;
+}
+
+/* No light mode for me D:< */
+
+.theme-dark {
+  --color-base-00: #111111;
+  --switch-background-color: #2a2a2a;
+  --header-color: var(--interactive-accent); /* #0f4bef alternative*/
+  --bold-color: #ffa92f;
+  --italic-color: #ffa92f;
+  --text-highlight-bg: #9ece6a66;
+  --text-faint: #565f8988;
+}
+
+.checkbox-container {
+  -webkit-app-region: no-drag;
+  cursor: var(--cursor);
+  background-color: var(--switch-background-color);
+  border-radius: var(--toggle-radius);
+  display: inline-block;
+  flex-shrink: 0;
+  height: calc(var(--toggle-thumb-height) + var(--toggle-border-width) * 2);
+  position: relative;
+  user-select: none;
+  width: var(--toggle-width);
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.07), inset 0 0 1px rgba(0, 0, 0, 0.21);
+  transition: box-shadow 0.15s ease-in-out, outline 0.15s ease-in-out, border 0.15s ease-in-out, opacity 0.15s ease-in-out;
+  outline: 0 solid var(--switch-background-color);
+}
+
+.status-bar {
+  max-width: min-content;
+}
+
+.empty-state-action {
+  display: none;
+}
+.empty-state-title {
+  font-size: 0;
+}
+
+.tree-item-self .tree-item-icon {
+  padding-left: 10px;
+}
+
+.empty-state-title::before {
+  content: "Project CHCR\A. . .\A[CLASSIFIED]";
+  font-family: 'Courier New', Courier, monospace;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%,150%);
+  height: 20px;
+  width: auto;
+  font-size: 0.8rem;
+  font-weight: normal;
+  text-align: center;
+  white-space: pre-wrap;
+}
+/* Shows ASCII aperture logo when there's no tabs */
+.empty-state-title::after {
+  content: ".,-:;//;:=,\A. :H@@@MM@M#H/.,+%;,\A,/X+ +M@@M@MM%=,-%HMMM@X/,\A-+@MM; $M@@MH+-,;XMMMM@MMMM@+-\A;@M@@M- XM@X;. -+XXXXXHHH@M@M#@/.\A,%MM@@MH ,@%=            .---=-=:=,.\A=@#@@@MX.,                -%HX$$%%%:;\A=-./@M@M$                   .;@MMMM@MM:\AX@/ -$MM/                    . +MM@@@M$\A,@M@H: :@:                     . =X#@@@@-\A,@@@MMX, .                     /H- ;@M@M=\A.H@@@@M@+,                     %MM+..%#$.\A/MMMM@MMH/.                   XM@MH; =;\A/%+%$XHH@$=                , .H@@@@MX,\A.=--------.            -%H.,@@@@@MX,\A.%MM@@@HHHXX$$$%+- .:$MMX =M@@MM%.\A=XMMM@MM@MM#H;,-+HMM@M+ /MMMX=\A=%@M@M#@$-.=$@MM@@@M; %M%=\A,:+$+-,/H#MMMMMMM@= =,\A=++%%%%+/:-.";
+  color: var(--interactive-accent);
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 0 0 20px var(--interactive-accent);
+  font-size: 0.5rem;
+  text-align: center;
+  white-space: pre-wrap;
+}
+
+/* Rounding off active tab corners */
+.workspace-tab-header.is-active {
+  border-radius: 0;
+  box-shadow: 0 0 0 var(--tab-outline-width) var(--tab-outline-color);
+  color: var(--tab-text-color-active);
+  background-color: var(--tab-background-active);
+}
+
+/* Allows workspace-tab-header-container-inner to have a full border */
+.workspace-tab-header-container-inner {
+  overflow: visible;
+}
+
+/* Removes curve on bottom tab too */
+.workspace-tab-header::before, .workspace-tab-header::after {
+  border-radius: 0;
+}
+
+/* Inline title fun */
+.inline-title {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.cm-header, .inline-title, .border-right {
+    text-shadow: 0 0 20px var(--interactive-accent);
+}
+
+.cm-hmd-internal-link {
+    text-shadow: 0 0 8px var(--interactive-accent);
+    opacity: 60%;
+    color: var(--interactive-accent);
+}
+
+.view-header-breadcrumb {
+    color: var(--interactive-accent);
+    opacity: 60%;
+}
+
+.nav-file-tag{
+    color: var(--interactive-accent);
+    opacity: 50%;
+}
+
+
